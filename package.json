@@ -1,0 +1,21 @@
+{
+  "name": "jaggi",
+  "version": "0.0.1",
+  "description": "Test bot for C10Y Slack",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rkst/jaggi"
+  },
+  "scripts": {
+    "start": "node jaggibot.js"
+  },
+  "dependencies": {
+    "botkit": "0.0.8",
+    "pg": "4.5.2"
+  },
+  "devDependencies": {
+    "dotenv": "^1.2.0"
+  },
+  "private": "true"
+}
+
