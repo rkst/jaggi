@@ -20,7 +20,6 @@ bot.startRTM(function(err,bot,payload) {
 var client = new pg.Client({
 	user: process.env.DB_USER,
 	password: process.env.DB_PASS,
-	database: 'segment',
 	host: process.env.DB_URL,
 	port: process.env.DB_PORT
 });
