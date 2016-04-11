@@ -11,9 +11,7 @@
   },
   "dependencies": {
     "botkit": "0.0.8",
-    "pg": "4.5.2"
-  },
-  "devDependencies": {
+    "pg": "4.5.2",
     "dotenv": "^1.2.0"
   },
   "private": "true"
