@@ -3,6 +3,7 @@ require('dotenv').config({silent:true});
 
 var Botkit = require('botkit');
 var pg = require('pg');
+var http = require('http');
 
 // Create controller spawn process
 var controller = Botkit.slackbot();
@@ -10,9 +11,9 @@ var bot = controller.spawn({
   token: process.env.SLACK_BOT_KEY
 });
 
-bot.startRTM(function(err,bot,payload) {
+bot.startRTM(function(err) {
   if (err) {
-    throw new Error("Could not connect to Slack")
+    throw new Error("Could not connect to Slack", err)
   }
 });
 
@@ -45,3 +46,10 @@ controller.hears(["yesterday","^pattern$"],["direct_message","direct_mention","m
 		bot.reply(message, result.rows.length + ' unique users of the RI planner yesterday');
 	});
 });
+
+//If Heroku doesn't bind to a port then it dies
+http.createServer(function(req, res) { 
+	res.writeHead(200, {'Content-Type': 'text/plain'});
+	res.write("hi");
+	res.end();
+}).listen(process.env.PORT || 5000);

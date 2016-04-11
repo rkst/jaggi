@@ -1,1 +1,1 @@
-bot: node jaggibot.js
+worker: node jaggibot.js
